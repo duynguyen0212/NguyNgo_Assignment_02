@@ -50,8 +50,6 @@ public class Library {
             else{
                 System.out.println("Successfully borrowed " + title);
                 collection.get(i).borrowed();
-                //collection.remove(i);
-                collection.get(i).borrowed = true;
                 return;
                 }
         System.out.println("Sorry, this book is out of stock.");
@@ -123,6 +121,5 @@ public class Library {
         printAvailableBook(firstLibrary.collection);
         System.out.println("\nCollege Library:");
         printAvailableBook(secondLibrary.collection);
-
     }
 }

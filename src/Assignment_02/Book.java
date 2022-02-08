@@ -6,7 +6,7 @@
 package Assignment_02;
 public class Book {
     private String title;
-    boolean borrowed;
+    private boolean borrowed;
 
     public Book(String title) {
         this.title = title;
@@ -27,10 +27,6 @@ public class Book {
 
     public boolean isBorrowed(){
         return borrowed;
-    }
-
-    public static void main(String args[]){
-
     }
 }
 
