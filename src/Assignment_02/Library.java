@@ -82,44 +82,45 @@ public class Library {
     /**Main function*/
     public static void main(String args[]){
         //Two libraries
-        Library firstLibrary = new Library("120 Queen St.");
-        Library secondLibrary = new Library("228 College St.");
-
-        //Add Books to the library
-        firstLibrary.addBook(new Book("The Lord of the Rings"));
-        firstLibrary.addBook(new Book("The DaVinci Code"));
-        firstLibrary.addBook(new Book("A tale of Two Cities"));
-        firstLibrary.addBook(new Book("Le Petit Prince"));
+        Library queenLibrary = new Library("120 Queen St.");
+        Library collegeLibrary = new Library("228 College St.");
 
         //Print opening hours and addresses
-        firstLibrary.printAddress();
+        queenLibrary.printAddress();
         openingHours();
-        secondLibrary.printAddress();
+        collegeLibrary.printAddress();
         openingHours();
+
+        //Add Books to Queen library
+        queenLibrary.addBook(new Book("The Lord of the Rings"));
+        queenLibrary.addBook(new Book("The DaVinci Code"));
+        queenLibrary.addBook(new Book("A tale of Two Cities"));
+        queenLibrary.addBook(new Book("Le Petit Prince"));
 
         //Try to borrow a book and borrow it again
         System.out.println("Borrow a book and re-borrow it...");
         System.out.println("Queen Library:");
-        firstLibrary.borrowBook("The Lord of the Rings");
-        firstLibrary.borrowBook("The Lord of the Rings");
+        queenLibrary.borrowBook("The Lord of the Rings");
+        queenLibrary.borrowBook("The Lord of the Rings");
 
         //Borrow same book but from College library which have 0 book
         System.out.println("College Library:");
-        secondLibrary.borrowBook("The Lord of the Rings");
+        collegeLibrary.borrowBook("The Lord of the Rings");
 
+        //Print available book at library
         System.out.println("\nAvailable books at two library: ");
         System.out.println("Queen Library:");
-        printAvailableBook(firstLibrary.collection);
+        printAvailableBook(queenLibrary.collection);
         System.out.println("\nCollege Library:");
-        printAvailableBook(secondLibrary.collection);
+        printAvailableBook(collegeLibrary.collection);
 
         System.out.print("\nReturning The Lord of the Rings to Queen: ");
-        firstLibrary.returnBook("The Lord of the Rings");
+        queenLibrary.returnBook("The Lord of the Rings");
 
         System.out.println("\nRe-print available books at two library: ");
         System.out.println("Queen Library:");
-        printAvailableBook(firstLibrary.collection);
+        printAvailableBook(queenLibrary.collection);
         System.out.println("\nCollege Library:");
-        printAvailableBook(secondLibrary.collection);
+        printAvailableBook(collegeLibrary.collection);
     }
 }
